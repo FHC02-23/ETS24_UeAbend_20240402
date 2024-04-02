@@ -40,6 +40,9 @@ public class ClientCommunication {
                     }
                     oos.writeObject(null);
                     oos.flush();
+                } else if(cmd.equalsIgnoreCase("getlist")) {
+                    oos.writeObject(people);
+                    oos.flush();
                 } else {
                     String[] cmds = cmd.split(" ");
                     int desiredId = Integer.parseInt(cmds[1]);
